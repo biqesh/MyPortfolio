@@ -4,11 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bikesh Twanju — Senior Software QA Automation Engineer</title>
-  <meta name="description" content="Portfolio of Bikesh Twanju, Senior Software QA Automation Engineer with 8+ years of IT experience." />
+  <meta name="description" content="Bikesh Twanju is a Senior Software QA Automation Engineer with 8+ years of experience leading test automation, release quality, and engineering mentorship." />
+  <meta name="author" content="Bikesh Twanju" />
+  <meta name="theme-color" content="#102738" />
+  <meta property="og:title" content="Bikesh Twanju — Senior Software QA Automation Engineer" />
+  <meta property="og:description" content="Eight years building reliable automation, sharper releases, and stronger engineering teams." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/bikesh-twanju.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23102738'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='Georgia,serif' font-size='26' font-weight='700' fill='%23f2f5f8'%3EBT%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bikesh Twanju",
+    "jobTitle": "Senior Software QA Automation Engineer",
+    "email": "mailto:biqesh@gmail.com",
+    "telephone": "+977-9840012329",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bhaktapur",
+      "addressCountry": "NP"
+    },
+    "alumniOf": "Khwopa Engineering College",
+    "image": "assets/bikesh-twanju.png",
+    "knowsAbout": [
+      "Test automation",
+      "Katalon Studio",
+      "Selenium",
+      "API testing",
+      "Release quality",
+      "Mentoring"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -16,23 +48,37 @@
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-logo" href="#top">Bikesh Twanju</a>
-      <nav class="site-nav" aria-label="Primary">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#education">Education</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top" aria-label="Introduction">
-      <div class="hero__media" role="img" aria-label="Soft morning light over traditional brick architecture in the Kathmandu Valley"></div>
+      <div class="hero__media" role="img" aria-label="Traditional brick architecture bathed in soft morning light in the Kathmandu Valley"></div>
       <div class="hero__veil"></div>
       <div class="hero__content">
         <p class="hero__brand">Bikesh Twanju</p>
         <h1 class="hero__title">Senior Software QA Automation Engineer</h1>
-        <p class="hero__lede">Eight years building reliable automation, sharper releases, and stronger engineering teams.</p>
+        <p class="hero__lede">Eight years leading automation strategy, stabilizing releases, and raising the bar for engineering teams.</p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#experience">View experience</a>
           <a class="btn btn--ghost" href="mailto:biqesh@gmail.com">Email me</a>
@@ -41,73 +87,102 @@
     </section>
 
     <section class="section about" id="about">
-      <div class="section__inner">
-        <p class="section__eyebrow">Professional summary</p>
-        <h2 class="section__title">Quality that ships with confidence</h2>
-        <p class="about__text">
-          Experienced QA Engineer with 8+ years of IT experience, known for effective problem solving,
-          operational excellence and strong collaboration skills.
-        </p>
-        <ul class="about__meta">
-          <li><span>Based in</span> Bhaktapur, Nepal</li>
-          <li><span>Focus</span> Test automation &amp; release quality</li>
-          <li><span>Education</span> B.E. Computer, Khwopa Engineering College</li>
-        </ul>
+      <div class="section__inner about__layout">
+        <figure class="about__portrait reveal">
+          <img
+            src="assets/bikesh-twanju.png"
+            alt="Professional portrait of Bikesh Twanju"
+            width="720"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+
+        <div class="about__copy">
+          <p class="section__eyebrow">About</p>
+          <h2 class="section__title">Quality engineering with operational clarity</h2>
+          <p class="about__text">
+            I help product and engineering teams ship with confidence. My work centers on dependable
+            automation frameworks, practical release governance, and mentoring that lifts the whole
+            QA practice—not just individual scripts.
+          </p>
+          <p class="about__text about__text--secondary">
+            Across healthcare and enterprise platforms, I have trained teams on Katalon Studio,
+            strengthened code-review culture, and kept hotfix and regression pipelines predictable
+            under pressure.
+          </p>
+
+          <dl class="about__facts">
+            <div>
+              <dt>Location</dt>
+              <dd>Bhaktapur, Nepal</dd>
+            </div>
+            <div>
+              <dt>Experience</dt>
+              <dd>8+ years in IT</dd>
+            </div>
+            <div>
+              <dt>Specialty</dt>
+              <dd>Automation &amp; release quality</dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </section>
 
     <section class="section experience" id="experience">
       <div class="section__inner">
-        <p class="section__eyebrow">Professional experience</p>
-        <h2 class="section__title">Where the work happened</h2>
+        <header class="section__header">
+          <p class="section__eyebrow">Experience</p>
+          <h2 class="section__title">Career timeline</h2>
+          <p class="section__lede">Selected roles spanning automation leadership, mentoring, and hands-on quality delivery.</p>
+        </header>
 
         <ol class="timeline">
           <li class="timeline__item reveal">
             <div class="timeline__meta">
-              <h3 class="timeline__company">IQVIA</h3>
               <p class="timeline__dates">Oct 2025 – Present</p>
+              <h3 class="timeline__company">IQVIA</h3>
             </div>
             <div class="timeline__body">
               <h4 class="timeline__role">Senior Software QA Automation Engineer</h4>
-              <p class="timeline__role-dates">Oct 2025 – Present</p>
               <ul>
-                <li>Led automation efforts for the EZ-CAP project, driving continuous improvement and monitoring to achieve reliable automation and full requirements coverage.</li>
-                <li>Support automation test execution for hotfixes and regression testing and analysis to ensure quality releases.</li>
-                <li>Assisted the team by troubleshooting automation challenges and resolving technical concerns.</li>
+                <li>Lead automation for the EZ-CAP project, improving monitoring and requirements coverage for dependable delivery.</li>
+                <li>Own automation support for hotfixes and regression cycles, with analysis that protects release stability.</li>
+                <li>Unblock the team by troubleshooting automation failures and resolving technical concerns quickly.</li>
               </ul>
             </div>
           </li>
 
           <li class="timeline__item reveal">
             <div class="timeline__meta">
-              <h3 class="timeline__company">Cedar Gate</h3>
               <p class="timeline__dates">Mar 2021 – Oct 2025</p>
+              <h3 class="timeline__company">Cedar Gate</h3>
             </div>
             <div class="timeline__body">
               <h4 class="timeline__role">Senior Software QA Automation Engineer</h4>
-              <p class="timeline__role-dates">Jun 2024 – Oct 2025</p>
+              <p class="timeline__role-dates">Senior role: Jun 2024 – Oct 2025</p>
               <ul>
-                <li>With the introduction of Katalon Studio at Cedar Gate, conducted training sessions for CGT automation teams across projects on structured test case, test suite, test collection and test object organization.</li>
-                <li>Provided training on automation best practices, proper coding standards, Bitbucket code reviews and Git actions to the team.</li>
-                <li>Participate in code reviews to maintain high quality and maintainable test scripts.</li>
-                <li>Developed and implemented effective test automation strategies to improve coverage, reliability, and delivery speed.</li>
+                <li>Trained CGT automation teams on Katalon Studio structure—test cases, suites, collections, and object organization.</li>
+                <li>Established shared standards for coding practices, Bitbucket reviews, and Git workflows across projects.</li>
+                <li>Reviewed automation code to keep scripts maintainable, readable, and production-ready.</li>
+                <li>Designed automation strategies that improved coverage, reliability, and delivery speed.</li>
               </ul>
             </div>
           </li>
 
           <li class="timeline__item reveal">
             <div class="timeline__meta">
-              <h3 class="timeline__company">Bidhee Pvt. Ltd.</h3>
               <p class="timeline__dates">Apr 2018 – Oct 2018</p>
+              <h3 class="timeline__company">Bidhee Pvt. Ltd.</h3>
             </div>
             <div class="timeline__body">
               <h4 class="timeline__role">Associate QA Engineer</h4>
-              <p class="timeline__role-dates">Apr 2018 – Oct 2018</p>
               <ul>
-                <li>Tested different types of applications in various devices.</li>
-                <li>Performed API testing using Postman and Swagger, automation testing using Selenium with Java, and performance testing using JMeter.</li>
-                <li>Developed team communications and information.</li>
-                <li>Collaborated with developers and project managers to assess program capabilities, features, and testing demands.</li>
+                <li>Validated applications across devices and platforms with structured manual and exploratory testing.</li>
+                <li>Executed API testing with Postman and Swagger, UI automation with Selenium and Java, and performance checks with JMeter.</li>
+                <li>Partnered with developers and project managers to clarify capabilities, features, and testing scope.</li>
               </ul>
             </div>
           </li>
@@ -117,36 +192,50 @@
 
     <section class="section skills" id="skills">
       <div class="section__inner">
-        <p class="section__eyebrow">Capabilities</p>
-        <h2 class="section__title">Languages &amp; interests</h2>
+        <header class="section__header">
+          <p class="section__eyebrow">Expertise</p>
+          <h2 class="section__title">Skills &amp; toolkit</h2>
+          <p class="section__lede">A focused stack for building, reviewing, and scaling automation that teams can trust.</p>
+        </header>
+
         <div class="skills__grid">
-          <div class="skills__block reveal">
-            <h3>Programming languages</h3>
-            <ul class="chip-list" role="list">
+          <article class="skills__block reveal">
+            <h3>Languages</h3>
+            <ul class="skill-list" role="list">
               <li>Java</li>
               <li>JavaScript</li>
             </ul>
-          </div>
-          <div class="skills__block reveal">
-            <h3>Interested in</h3>
-            <ul class="interest-list">
-              <li>Automation test scripting</li>
-              <li>Tracking the development process</li>
-              <li>Bug tracking</li>
-              <li>Problem solving</li>
-              <li>Documentation and reporting</li>
-            </ul>
-          </div>
-          <div class="skills__block reveal">
-            <h3>Tools in practice</h3>
-            <ul class="interest-list">
+          </article>
+
+          <article class="skills__block reveal">
+            <h3>Automation &amp; testing</h3>
+            <ul class="skill-list" role="list">
               <li>Katalon Studio</li>
               <li>Selenium with Java</li>
               <li>Postman &amp; Swagger</li>
               <li>JMeter</li>
-              <li>Bitbucket &amp; Git</li>
             </ul>
-          </div>
+          </article>
+
+          <article class="skills__block reveal">
+            <h3>Delivery &amp; collaboration</h3>
+            <ul class="skill-list" role="list">
+              <li>Bitbucket &amp; Git</li>
+              <li>Code review practices</li>
+              <li>Team mentoring</li>
+              <li>Release regression support</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="skills__focus reveal">
+          <h3>Working principles</h3>
+          <ul class="interest-list">
+            <li>Automation that stays readable after the next release</li>
+            <li>Clear ownership across development and QA workflows</li>
+            <li>Fast, structured bug investigation and reporting</li>
+            <li>Documentation that shortens onboarding time</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -158,7 +247,7 @@
           <h2 class="section__title">Academic foundation</h2>
         </div>
         <div class="education__detail reveal">
-          <p class="education__degree">B.E. Computer</p>
+          <p class="education__degree">Bachelor of Engineering — Computer</p>
           <p class="education__school">Khwopa Engineering College</p>
           <p class="education__dates">December 2013 – December 2017</p>
         </div>
@@ -166,21 +255,46 @@
     </section>
 
     <section class="section contact" id="contact">
-      <div class="section__inner contact__inner">
-        <p class="section__eyebrow">Contact</p>
-        <h2 class="section__title">Let’s talk about quality</h2>
-        <p class="contact__text">Open to conversations about automation strategy, mentoring, and building dependable release pipelines.</p>
-        <div class="contact__actions">
-          <a class="btn btn--primary" href="mailto:biqesh@gmail.com">biqesh@gmail.com</a>
-          <a class="btn btn--ghost" href="tel:+9779840012329">+977-9840012329</a>
+      <div class="section__inner contact__layout">
+        <div class="contact__intro">
+          <p class="section__eyebrow">Contact</p>
+          <h2 class="section__title">Let’s talk about quality</h2>
+          <p class="contact__text">
+            Available for conversations on automation strategy, mentoring, and building release
+            pipelines teams can rely on.
+          </p>
         </div>
-        <p class="contact__location">Bhaktapur, Nepal</p>
+
+        <div class="contact__panel reveal">
+          <dl class="contact__list">
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:biqesh@gmail.com">biqesh@gmail.com</a></dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd><a href="tel:+9779840012329">+977-9840012329</a></dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Bhaktapur, Nepal</dd>
+            </div>
+          </dl>
+          <a class="btn btn--primary contact__cta" href="mailto:biqesh@gmail.com">Start a conversation</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> Bikesh Twanju</p>
+    <div class="site-footer__inner">
+      <div>
+        <p class="site-footer__name">Bikesh Twanju</p>
+        <p class="site-footer__role">Senior Software QA Automation Engineer</p>
+      </div>
+      <p class="site-footer__copy">© <span id="year"></span> All rights reserved.</p>
+      <a href="#top">Back to top</a>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
