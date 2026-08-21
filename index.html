@@ -40,28 +40,30 @@
 
     <main class="workspace" id="workspace">
       <section class="panel is-active" id="panel-home" data-panel="home" aria-label="Home">
+        <div class="orb orb--one" aria-hidden="true"></div>
+        <div class="orb orb--two" aria-hidden="true"></div>
         <div class="home">
           <div class="home__copy">
-            <p class="pill">
+            <p class="pill anim-item" style="--i:0">
               <span class="pill__dot" aria-hidden="true"></span>
               Available for opportunities
             </p>
-            <h1>
+            <h1 class="anim-item" style="--i:1">
               <span class="home__hi">Hi, I'm</span>
               <span class="home__name">Bikesh Twanju</span>
             </h1>
-            <p class="home__role">Senior Software QA Automation Engineer</p>
-            <p class="home__lede">
+            <p class="home__role anim-item" style="--i:2">Senior Software QA Automation Engineer</p>
+            <p class="home__lede anim-item" style="--i:3">
               I build robust test automation frameworks that catch defects early and deliver reliable software.
-              With 8+ years crafting quality through Katalon, Selenium, mentoring, and dependable releases.
+              With 8+ years crafting quality through Katalon, Selenium, Playwright, CI/CD, mentoring, and AI-assisted QA.
             </p>
-            <div class="home__actions">
+            <div class="home__actions anim-item" style="--i:4">
               <button type="button" class="btn btn--gradient" data-go="contact">Let's Connect</button>
               <a class="btn btn--outline" href="assets/resume.pdf" download>Download Resume</a>
             </div>
           </div>
 
-          <div class="home__visual">
+          <div class="home__visual anim-item" style="--i:5">
             <div class="home__frame">
               <img src="assets/bikesh-twanju.png" alt="Portrait of Bikesh Twanju" width="640" height="800" />
             </div>
@@ -74,8 +76,8 @@
               <span>Automation Expert</span>
             </button>
             <button type="button" class="float-card float-card--c" data-go="about">
-              <strong>Release</strong>
-              <span>Quality Focus</span>
+              <strong>AI</strong>
+              <span>Modern QA</span>
             </button>
           </div>
         </div>
@@ -164,31 +166,54 @@
       <section class="panel" id="panel-skills" data-panel="skills" aria-label="Skills" hidden>
         <div class="panel__inner skills-view">
           <header class="skills-view__header">
-            <p class="eyebrow">Expertise</p>
-            <h2>Skills &amp; toolkit</h2>
-            <div class="skill-tabs" role="tablist" aria-label="Skill categories">
+            <p class="eyebrow anim-item">Expertise</p>
+            <h2 class="anim-item">Skills &amp; toolkit</h2>
+            <div class="skill-tabs anim-item" role="tablist" aria-label="Skill categories">
               <button type="button" class="skill-tab is-active" data-skill="languages">Languages</button>
               <button type="button" class="skill-tab" data-skill="automation">Automation</button>
-              <button type="button" class="skill-tab" data-skill="delivery">Delivery</button>
+              <button type="button" class="skill-tab" data-skill="api">API &amp; Perf</button>
+              <button type="button" class="skill-tab" data-skill="cicd">CI/CD &amp; Tools</button>
+              <button type="button" class="skill-tab" data-skill="ai">AI &amp; Modern QA</button>
             </div>
           </header>
 
           <div class="skill-panels">
             <div class="skill-panel is-active" data-skill-panel="languages">
-              <button type="button" class="skill-chip">Java</button>
-              <button type="button" class="skill-chip">JavaScript</button>
+              <button type="button" class="skill-chip" style="--i:0">Java</button>
+              <button type="button" class="skill-chip" style="--i:1">JavaScript</button>
+              <button type="button" class="skill-chip" style="--i:2">TypeScript</button>
+              <button type="button" class="skill-chip" style="--i:3">SQL</button>
+              <button type="button" class="skill-chip" style="--i:4">Groovy</button>
             </div>
             <div class="skill-panel" data-skill-panel="automation" hidden>
-              <button type="button" class="skill-chip">Katalon Studio</button>
-              <button type="button" class="skill-chip">Selenium with Java</button>
-              <button type="button" class="skill-chip">Postman &amp; Swagger</button>
-              <button type="button" class="skill-chip">JMeter</button>
+              <button type="button" class="skill-chip" style="--i:0">Katalon Studio</button>
+              <button type="button" class="skill-chip" style="--i:1">Selenium</button>
+              <button type="button" class="skill-chip" style="--i:2">Playwright</button>
+              <button type="button" class="skill-chip" style="--i:3">Cypress</button>
+              <button type="button" class="skill-chip" style="--i:4">TestNG / JUnit</button>
+              <button type="button" class="skill-chip" style="--i:5">Appium</button>
             </div>
-            <div class="skill-panel" data-skill-panel="delivery" hidden>
-              <button type="button" class="skill-chip">Bitbucket &amp; Git</button>
-              <button type="button" class="skill-chip">Code reviews</button>
-              <button type="button" class="skill-chip">Team mentoring</button>
-              <button type="button" class="skill-chip">Release regression</button>
+            <div class="skill-panel" data-skill-panel="api" hidden>
+              <button type="button" class="skill-chip" style="--i:0">Postman</button>
+              <button type="button" class="skill-chip" style="--i:1">Swagger / OpenAPI</button>
+              <button type="button" class="skill-chip" style="--i:2">Rest Assured</button>
+              <button type="button" class="skill-chip" style="--i:3">JMeter</button>
+              <button type="button" class="skill-chip" style="--i:4">Newman</button>
+            </div>
+            <div class="skill-panel" data-skill-panel="cicd" hidden>
+              <button type="button" class="skill-chip" style="--i:0">Git &amp; Bitbucket</button>
+              <button type="button" class="skill-chip" style="--i:1">Jenkins</button>
+              <button type="button" class="skill-chip" style="--i:2">GitHub Actions</button>
+              <button type="button" class="skill-chip" style="--i:3">Docker</button>
+              <button type="button" class="skill-chip" style="--i:4">Jira</button>
+              <button type="button" class="skill-chip" style="--i:5">Code reviews</button>
+            </div>
+            <div class="skill-panel" data-skill-panel="ai" hidden>
+              <button type="button" class="skill-chip" style="--i:0">Katalon AI</button>
+              <button type="button" class="skill-chip" style="--i:1">GenAI for testing</button>
+              <button type="button" class="skill-chip" style="--i:2">Prompt-assisted QA</button>
+              <button type="button" class="skill-chip" style="--i:3">Smart test maintenance</button>
+              <button type="button" class="skill-chip" style="--i:4">Release quality analytics</button>
             </div>
           </div>
         </div>

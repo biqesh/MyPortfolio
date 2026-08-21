@@ -42,6 +42,22 @@ const updateChrome = () => {
   }
 };
 
+const replayAnimations = (panel) => {
+  if (!panel) return;
+
+  panel.querySelectorAll(".anim-item").forEach((el) => {
+    el.style.animation = "none";
+    void el.offsetWidth;
+    el.style.animation = "";
+  });
+
+  panel.querySelectorAll(".skill-chip").forEach((chip) => {
+    chip.style.animation = "none";
+    void chip.offsetWidth;
+    chip.style.animation = "";
+  });
+};
+
 const showPanel = (id, { updateHash = true } = {}) => {
   if (!panels.includes(id) || id === current || isAnimating) return;
 
@@ -49,32 +65,34 @@ const showPanel = (id, { updateHash = true } = {}) => {
   const incoming = panelEls[id];
   if (!outgoing || !incoming) return;
 
+  const goingForward = panels.indexOf(id) > panels.indexOf(current);
   isAnimating = true;
   outgoing.classList.add("is-exit");
-  outgoing.classList.remove("is-active");
+  outgoing.classList.remove("is-active", "from-left", "from-right");
 
   window.setTimeout(() => {
     outgoing.hidden = true;
     outgoing.classList.remove("is-exit");
 
     incoming.hidden = false;
+    incoming.classList.remove("from-left", "from-right");
+    incoming.classList.add(goingForward ? "from-right" : "from-left");
+
     requestAnimationFrame(() => {
       incoming.classList.add("is-active");
+      replayAnimations(incoming);
     });
 
     current = id;
     updateChrome();
-    if (updateHash) {
-      history.replaceState(null, "", `#${id}`);
-    }
+    if (updateHash) history.replaceState(null, "", `#${id}`);
     setMenuOpen(false);
     isAnimating = false;
   }, 220);
 };
 
 const goRelative = (step) => {
-  const index = panels.indexOf(current);
-  const next = panels[index + step];
+  const next = panels[panels.indexOf(current) + step];
   if (next) showPanel(next);
 };
 
@@ -131,23 +149,40 @@ document.querySelectorAll(".job-tab").forEach((tab) => {
   });
 });
 
-document.querySelectorAll(".skill-tab").forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const skill = tab.getAttribute("data-skill");
-    document.querySelectorAll(".skill-tab").forEach((item) => {
-      item.classList.toggle("is-active", item === tab);
-    });
-    document.querySelectorAll(".skill-panel").forEach((panel) => {
-      const active = panel.getAttribute("data-skill-panel") === skill;
-      panel.classList.toggle("is-active", active);
-      panel.hidden = !active;
+const bindSkillTabs = () => {
+  document.querySelectorAll(".skill-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const skill = tab.getAttribute("data-skill");
+      document.querySelectorAll(".skill-tab").forEach((item) => {
+        item.classList.toggle("is-active", item === tab);
+      });
+      document.querySelectorAll(".skill-panel").forEach((panel) => {
+        const active = panel.getAttribute("data-skill-panel") === skill;
+        panel.classList.toggle("is-active", active);
+        panel.hidden = !active;
+        if (active) {
+          panel.querySelectorAll(".skill-chip").forEach((chip) => {
+            chip.style.animation = "none";
+            void chip.offsetWidth;
+            chip.style.animation = "";
+          });
+        }
+      });
     });
   });
-});
+};
+
+bindSkillTabs();
 
 document.querySelectorAll(".skill-chip").forEach((chip) => {
-  chip.addEventListener("click", () => {
-    chip.classList.toggle("is-picked");
+  chip.addEventListener("click", () => chip.classList.toggle("is-picked"));
+});
+
+document.querySelectorAll(".btn").forEach((btn) => {
+  btn.addEventListener("pointermove", (event) => {
+    const rect = btn.getBoundingClientRect();
+    btn.style.setProperty("--x", `${event.clientX - rect.left}px`);
+    btn.style.setProperty("--y", `${event.clientY - rect.top}px`);
   });
 });
 
@@ -169,3 +204,4 @@ if (panels.includes(initial) && initial !== "home") {
 }
 
 updateChrome();
+replayAnimations(panelEls[current]);

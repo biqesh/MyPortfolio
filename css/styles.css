@@ -131,7 +131,7 @@ a {
   font-size: 0.92rem;
   padding: 0.45rem 0.55rem;
   border-radius: 999px;
-  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+  transition: color 0.2s var(--ease), background 0.2s var(--ease), transform 0.2s var(--ease);
 }
 
 .topnav__link:hover,
@@ -175,6 +175,8 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
   min-height: 2.85rem;
   padding: 0.65rem 1.25rem;
   border-radius: 999px;
@@ -183,6 +185,19 @@ a {
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.35), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+.btn:active::after {
+  opacity: 1;
 }
 
 .btn:hover {
@@ -214,8 +229,8 @@ a {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(18px) scale(0.985);
-  transition: opacity 0.4s var(--ease), transform 0.45s var(--ease), visibility 0.4s;
+  transform: translateY(22px) scale(0.98);
+  transition: opacity 0.45s var(--ease), transform 0.5s var(--ease), visibility 0.45s;
   display: grid;
   align-items: center;
 }
@@ -229,14 +244,51 @@ a {
 
 .panel.is-exit {
   opacity: 0;
-  transform: translateY(-12px) scale(0.99);
+  transform: translateY(-16px) scale(0.985);
+}
+
+.panel.is-active.from-left {
+  animation: slideFromLeft 0.5s var(--ease) both;
+}
+
+.panel.is-active.from-right {
+  animation: slideFromRight 0.5s var(--ease) both;
 }
 
 .panel__inner {
   width: 100%;
 }
 
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+.orb--one {
+  width: 16rem;
+  height: 16rem;
+  left: -2rem;
+  top: 10%;
+  background: rgba(59, 130, 246, 0.28);
+  animation: orbFloat 9s ease-in-out infinite;
+}
+
+.orb--two {
+  width: 14rem;
+  height: 14rem;
+  right: -1rem;
+  bottom: 8%;
+  background: rgba(139, 92, 246, 0.26);
+  animation: orbFloat 11s ease-in-out 1s infinite reverse;
+}
+
 .home {
+  position: relative;
+  z-index: 1;
   display: grid;
   gap: 2rem;
   align-items: center;
@@ -269,6 +321,7 @@ a {
   border-radius: 50%;
   background: #22c55e;
   box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.16);
+  animation: pulseDot 1.8s ease-in-out infinite;
 }
 
 .home__hi,
@@ -291,10 +344,12 @@ a {
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 1.05;
-  background: var(--gradient);
+  background: linear-gradient(120deg, #3b82f6 0%, #8b5cf6 45%, #3b82f6 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: shimmer 5s linear infinite;
 }
 
 .home__role {
@@ -329,6 +384,11 @@ a {
   aspect-ratio: 4 / 5;
   background: #e8eef8;
   box-shadow: var(--shadow);
+  transition: transform 0.45s var(--ease);
+}
+
+.home__visual:hover .home__frame {
+  transform: scale(1.02);
 }
 
 .home__frame img {
@@ -351,11 +411,13 @@ a {
   cursor: pointer;
   text-align: left;
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+  animation: floatCard 4.8s ease-in-out infinite;
 }
 
 .float-card:hover {
-  transform: translateY(-4px) scale(1.03);
+  transform: translateY(-6px) scale(1.04);
   box-shadow: var(--shadow);
+  animation-play-state: paused;
 }
 
 .float-card strong {
@@ -376,16 +438,19 @@ a {
 .float-card--a {
   left: -0.6rem;
   top: 42%;
+  animation-delay: 0s;
 }
 
 .float-card--b {
   right: -0.4rem;
   top: 12%;
+  animation-delay: 0.5s;
 }
 
 .float-card--c {
   right: -0.25rem;
   bottom: 12%;
+  animation-delay: 1s;
 }
 
 .eyebrow {
@@ -606,15 +671,24 @@ a {
   font-weight: 700;
   cursor: pointer;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  animation: chipIn 0.45s var(--ease) forwards;
+  animation-delay: calc(var(--i, 0) * 0.06s);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), background 0.2s var(--ease);
 }
 
 .skill-chip:hover,
 .skill-chip.is-picked {
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.03);
   box-shadow: var(--shadow);
   border-color: transparent;
   background: linear-gradient(180deg, #fff, #f3f0ff);
+}
+
+.skill-chip.is-picked {
+  background: var(--gradient);
+  color: var(--white);
 }
 
 .education-view {
@@ -778,6 +852,96 @@ a.contact-card:hover {
   }
 }
 
+@keyframes chipIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.08);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(18px, -14px) scale(1.08);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-28px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes riseStagger {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-item {
+  opacity: 0;
+  animation: riseStagger 0.55s var(--ease) forwards;
+  animation-delay: calc(var(--i, 0) * 0.08s);
+}
+
+.panel.is-active .anim-item {
+  animation-name: riseStagger;
+}
+
+.topnav__link:hover {
+  transform: translateY(-1px);
+}
+
 @media (max-width: 860px) {
   .menu-toggle {
     display: inline-block;
@@ -828,6 +992,10 @@ a.contact-card:hover {
   .bottombar__copy {
     display: none;
   }
+
+  .orb {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -836,5 +1004,11 @@ a.contact-card:hover {
   *::after {
     animation: none !important;
     transition: none !important;
+  }
+
+  .anim-item,
+  .skill-chip {
+    opacity: 1;
+    transform: none;
   }
 }
